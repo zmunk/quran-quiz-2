@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+
+$bg-color: #826F66;
+$primary-color: #F7CCAC;
+$secondary-color: #3A3845;
+$accent-color: #C69B7B;
+$bad-color: red;
+$good-color: green;
+
+$text-color: $secondary-color;
+$button-bg-color: $accent-color;
+
+
+body {
+  background: $bg-color;
+  display: flex;
+  justify-content: center; /* horizontal */
+  min-height: 100vh; /* vertical */
+  align-items: center;
+  text-align: center;
+}
+
+.padding-1 { padding: 1rem; }
+.padding-2 { padding: 2rem; }
+
+.center-content {
+  display: grid;
+  place-items: center;
+}
+
+p.arabic { font-family: 'Amiri', serif; }
+
+h2, p { color: $text-color; }
+
+button {
+  // padding: 5px 10px 5px; [> top right-left bottom <]
+  padding: 5px 10px; /* vertical horizontal */
+  background: $button-bg-color;
+  // color: white;
+  color: $text-color;
+  border: 0;
+  border-radius: 4px;
+
+  &:hover {
+    background: lighten($button-bg-color, 5%);
+    cursor: pointer;
+  }
+}
+
+div.card {
+  @extend .center-content;
+  @extend .padding-2;
+
+  $width: 500px;
+
+  width: $width;
+  background: $primary-color;
+  border-radius: 5px;
+
+  h2 { margin: 0; }
+
+  p.score {
+    font-size: 0.75rem;
+    position: relative;
+    top: -15px;
+  }
+
+  p.arabic {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p.result {
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 1rem;
+
+
+    &.bad { color: $bad-color; }
+    &.good { color: $good-color; }
+  }
+
+  p.correct-answer {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  div.button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: $width * (2/3);
+    gap: 10px;
+  }
+}
