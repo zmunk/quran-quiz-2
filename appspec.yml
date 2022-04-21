@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: .
-    destination: /home/ec2-user/quran-quiz-2
+    destination: /home/ubuntu/quran
 hooks:
   AfterInstall:
    - location: setup.sh
