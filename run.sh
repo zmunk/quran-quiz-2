@@ -1,4 +1,4 @@
 # run.sh
-cd /home/ec2-user/quran-quiz-2
+cd /home/ubuntu/quran
 npm install
 npm start
