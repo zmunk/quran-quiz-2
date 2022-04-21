@@ -3,6 +3,11 @@ os: linux
 files:
   - source: .
     destination: /home/ubuntu/quran
+permissions:
+  - object: /home/ubuntu/quran/setup.sh
+    mode: 755
+  - object: /home/ubuntu/quran/run.sh
+    mode: 755
 hooks:
   AfterInstall:
    - location: setup.sh
